@@ -1,0 +1,24 @@
+# Node
+node_modules
+.pnp.*
+
+# Yarn
+.yarn
+.yarn/*
+!.yarn/install-state.gz
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Builds
+**/dist
+
+# Logs
+*.log
+
+# Environment
+.env
+.yarn/unplugged
