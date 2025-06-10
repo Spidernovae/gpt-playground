@@ -23,3 +23,5 @@ You can still run the underlying Yarn commands directly if you prefer.
 
 - **sliding-puzzle** – 15‑puzzle game implemented with Vue 3.
 - **solar-system** – interactive 3D solar system demo built with Three.js.
+- **data-structures-lib** – reusable data structures like `PriorityQueue` and
+  `Graph` with built‑in DFS/BFS helpers.

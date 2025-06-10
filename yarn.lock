@@ -732,6 +732,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"data-structures-lib@workspace:apps/data-structures-lib":
+  version: 0.0.0-use.local
+  resolution: "data-structures-lib@workspace:apps/data-structures-lib"
+  dependencies:
+    typescript: "npm:~5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "de-indent@npm:^1.0.2":
   version: 1.0.2
   resolution: "de-indent@npm:1.0.2"
