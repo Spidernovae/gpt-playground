@@ -15,6 +15,9 @@ make sliding-puzzle
 
 # run the solar system demo
 make solar-system
+
+# run the motion playground
+make motion-playground
 ```
 
 You can still run the underlying Yarn commands directly if you prefer.
@@ -25,3 +28,4 @@ You can still run the underlying Yarn commands directly if you prefer.
 - **solar-system** – interactive 3D solar system demo built with Three.js.
 - **data-structures-lib** – reusable data structures like `PriorityQueue` and
   `Graph` with built‑in DFS/BFS helpers.
+- **motion-playground** – sample animations using the `motion-v` library.
