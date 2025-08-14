@@ -1,0 +1,15 @@
+{
+  "name": "travel-playlist",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:travel": "node travel-service.js",
+    "start:music": "node music-service.js",
+    "start:frontend": "node frontend-service.js",
+    "start": "concurrently \"yarn start:travel\" \"yarn start:music\" \"yarn start:frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "express": "^4.18.2"
+  }
+}
