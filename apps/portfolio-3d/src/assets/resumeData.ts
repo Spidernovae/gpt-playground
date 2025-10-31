@@ -1,4 +1,4 @@
-{
+const resume = {
   "name": "Jaskanwal Singh",
   "title": "Senior Software Engineer - Payments & Web Architecture",
   "contact": {
@@ -110,3 +110,5 @@
     "Maintain consistent tone and career branding across outputs."
   ]
 }
+
+export default resume

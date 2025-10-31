@@ -1,30 +1,43 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import resume from './assets/resumeData'
+import HeroSection from './components/HeroSection.vue'
+import AboutSection from './components/AboutSection.vue'
+import ExperienceSection from './components/ExperienceSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import SkillsSection from './components/SkillsSection.vue'
+import EducationSection from './components/EducationSection.vue'
+import CertificatesSection from './components/CertificatesSection.vue'
+import LanguagesInterestsSection from './components/LanguagesInterestsSection.vue'
+import ContactSection from './components/ContactSection.vue'
+import FooterBar from './components/FooterBar.vue'
+
+type Resume = typeof resume
+const data: Resume = resume
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main class="nb-stack">
+    <HeroSection :name="data.name" :title="data.title" :contact="data.contact" />
+
+    <AboutSection :summary="data.summary" />
+
+    <ExperienceSection :experience="data.experience" />
+
+    <ProjectsSection :projects="data.projects" />
+
+    <SkillsSection :skills="data.skills" />
+
+    <EducationSection :education="data.education" />
+
+    <CertificatesSection :certificates="data.certificates" />
+
+    <LanguagesInterestsSection :languages="data.languages" :interests="data.interests" />
+
+    <ContactSection :contact="data.contact" />
+
+    <FooterBar :name="data.name" />
+  </main>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
