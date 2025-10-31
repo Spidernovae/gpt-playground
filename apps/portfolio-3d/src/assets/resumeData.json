@@ -1,0 +1,112 @@
+{
+  "name": "Jaskanwal Singh",
+  "title": "Senior Software Engineer - Payments & Web Architecture",
+  "contact": {
+    "email": "jaskanwal196@gmail.com",
+    "phone": "+81 7090217983",
+    "location": "Tokyo, Japan",
+    "linkedin": "https://linkedin.com/in/jaskanwal-singh-074b65107",
+    "github": "https://github.com/jaskanwal96"
+  },
+  "summary": "Senior Software Engineer with 7+ years of experience in fintech and enterprise systems. Skilled in frontend architecture, high-traffic systems, Web BFF integration, and performance testing. Delivered government-scale payment solutions at PayPay, built digital banking experiences at Zeta (Axon) for global card issuers, and is now helping PayPay Bank establish its web architecture from scratch while leveraging AI tools to accelerate development, testing, and documentation workflows.",
+  "experience": [
+    {
+      "company": "PayPay Corporation",
+      "role": "Web Engineer – Payments",
+      "period": "March 2023 – Present",
+      "location": "Tokyo, Japan",
+      "achievements": [
+        "Built frontend flow for Gov-to-Citizen (G2C) Gift Voucher Project, enabling regulated regional spending; delivered Nara Prefecture rollout serving 1.4M+ users.",
+        "Developed donation/remittance platform (Offline Donations) for shrines and disaster relief with animation-heavy frontend flows tied to API events.",
+        "Designed Web BFF APIs, optimized payloads, and reduced latency to improve scalability of web modules.",
+        "Designed and executed load tests on third-party integrations (Amazon, Alipay, Apple) and tuned rate limits to ensure reliability under peak traffic.",
+        "Since July 2025, seconded to PayPay Bank to build its web architecture from scratch and develop a new loan application on top of it."
+      ]
+    },
+    {
+      "company": "Zeta",
+      "role": "SDE II – Axon Team",
+      "period": "August 2021 – February 2023",
+      "location": "Hyderabad, India",
+      "achievements": [
+        "Contributed to Axon, Zeta’s digital banking platform for issuers, delivering always-on card management, payments, and spend insights (SDK + ready-to-use apps).",
+        "Built micro-frontend modules for cardholder experiences, enabling rapid rollout of spend insights and risk controls.",
+        "Created HLDs and LLDs, designed reusable frontend architecture for SDK and issuer web apps.",
+        "Enhanced performance and scalability, supporting zero-to-one product rollouts for global financial institutions."
+      ]
+    },
+    {
+      "company": "uTrade Solutions",
+      "role": "Software Engineer",
+      "period": "March 2020 – July 2021",
+      "location": "Mohali, India",
+      "achievements": [
+        "Developed a full-featured online trading web app from scratch with real-time market data, order execution, and portfolio management.",
+        "Built a secure Angular-based browser extension for encrypted transfer of OTPs and files."
+      ]
+    },
+    {
+      "company": "GlobalLogic",
+      "role": "Software Engineer",
+      "period": "July 2018 – February 2020",
+      "location": "Bengaluru, India",
+      "achievements": [
+        "Worked on VMware’s vSphere H5 client team, gaining hands-on experience with virtual machines and hypervisors.",
+        "Contributed to the Angular-based Hypervisor UI, improving usability for VM lifecycle management."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.Tech in Computer Science Engineering",
+    "institution": "Chitkara University",
+    "location": "India",
+    "period": "August 2014 – July 2018",
+    "grade": "8.2 CGPA"
+  },
+  "skills": {
+    "frontend": ["Vue 3", "React", "TypeScript", "Micro-Frontends"],
+    "backend_and_hybrid": ["Node.js", "NestJS", "Web BFF"],
+    "performance_and_reliability": ["High-Traffic Management", "Performance Testing", "Release Ops"],
+    "devops_and_tools": ["Git", "Jenkins", "Kubernetes", "SonarQube", "Sentry", "Grafana", "Kibana"],
+    "ai_and_productivity": ["GitHub Copilot", "Cursor", "MCP", "AI-assisted development", "AI-driven testing and documentation"]
+  },
+  "projects": [
+    {
+      "name": "Video Conferencing Tool",
+      "description": "Real-time communication app built with Socket.io, WebRTC, and Twilio integrations."
+    },
+    {
+      "name": "Browser Extension",
+      "description": "Encrypted OTP and file transfer extension built with Angular and secure messaging protocols."
+    }
+  ],
+  "certificates": [
+    {
+      "provider": "Udacity",
+      "certifications": ["Full Stack Web Development", "Android Development"]
+    },
+    {
+      "provider": "NPTEL (IIT Madras)",
+      "certifications": ["Data Structures & Algorithms (Elite Grade)"]
+    }
+  ],
+  "languages": {
+    "English": "Full Professional Proficiency",
+    "Hindi": "Native/Bilingual Proficiency",
+    "Japanese": "Elementary Proficiency"
+  },
+  "interests": ["Hiking", "Football", "Cycling", "Music"],
+  "career_goals": [
+    "Continue building scalable fintech systems and web architecture foundations.",
+    "Take on leadership roles in web engineering and architecture design.",
+    "Leverage AI-assisted development to improve productivity, code quality, and developer experience.",
+    "Work in cross-functional, multicultural teams and contribute to high-impact financial platforms."
+  ],
+  "tone_preference": "Professional, globally neutral, technically articulate, and concise.",
+  "intended_ai_use": [
+    "Generate tailored resumes, cover letters, and LinkedIn summaries.",
+    "Create interview preparation materials aligned with fintech and web architecture roles.",
+    "Assist in portfolio creation and project storytelling.",
+    "Maintain consistent tone and career branding across outputs."
+  ]
+}
