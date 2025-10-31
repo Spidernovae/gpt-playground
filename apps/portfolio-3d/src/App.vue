@@ -10,30 +10,50 @@ import CertificatesSection from './components/CertificatesSection.vue'
 import LanguagesInterestsSection from './components/LanguagesInterestsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterBar from './components/FooterBar.vue'
+import vReveal from './directives/reveal'
+import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { SmoothScroller, shouldEnableSmooth } from './utils/smoothScroll'
 
 type Resume = typeof resume
 const data: Resume = resume
+const vRevealDirective = vReveal
+
+const rootRef = ref<HTMLElement | null>(null)
+let scroller: SmoothScroller | null = null
+
+onMounted(() => {
+  const el = rootRef.value
+  if (el && shouldEnableSmooth()) {
+    scroller = new SmoothScroller(el, 0.12)
+    scroller.mount()
+  }
+})
+
+onBeforeUnmount(() => {
+  scroller?.unmount()
+  scroller = null
+})
 </script>
 
 <template>
-  <main class="nb-stack">
-    <HeroSection :name="data.name" :title="data.title" :contact="data.contact" />
+  <main ref="rootRef" class="nb-stack smooth-root">
+    <HeroSection v-reveal="vRevealDirective" :name="data.name" :title="data.title" :contact="data.contact" />
 
-    <AboutSection :summary="data.summary" />
+    <AboutSection v-reveal="vRevealDirective" :summary="data.summary" />
 
-    <ExperienceSection :experience="data.experience" />
+    <ExperienceSection v-reveal="vRevealDirective" :experience="data.experience" />
 
-    <ProjectsSection :projects="data.projects" />
+    <ProjectsSection v-reveal="vRevealDirective" :projects="data.projects" />
 
-    <SkillsSection :skills="data.skills" />
+    <SkillsSection v-reveal="vRevealDirective" :skills="data.skills" />
 
-    <EducationSection :education="data.education" />
+    <EducationSection v-reveal="vRevealDirective" :education="data.education" />
 
-    <CertificatesSection :certificates="data.certificates" />
+    <CertificatesSection v-reveal="vRevealDirective" :certificates="data.certificates" />
 
-    <LanguagesInterestsSection :languages="data.languages" :interests="data.interests" />
+    <LanguagesInterestsSection v-reveal="vRevealDirective" :languages="data.languages" :interests="data.interests" />
 
-    <ContactSection :contact="data.contact" />
+    <ContactSection v-reveal="vRevealDirective" :contact="data.contact" />
 
     <FooterBar :name="data.name" />
   </main>
