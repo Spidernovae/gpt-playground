@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Flick the Puck</title>
+    <style>
+      :root { --bg: #f5f6f8; --surface: #fff; --text: #15171c; --muted: #5b6270; --accent: #3b5bfd; --border: #d8dce4; }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0e1015; --surface: #171a21; --text: #e7e9ef; --muted: #9aa1ad; --accent: #7d95ff; --border: #2b303b; }
+      }
+      body { margin: 0; padding: 1.5rem 1rem; background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; }
+      h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+      p { margin: 0 0 1rem; color: var(--muted); }
+      #table {
+        position: relative;
+        height: min(70vh, 560px);
+        max-width: 900px;
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        background: var(--surface);
+        overflow: hidden;
+        touch-action: none; /* let pointer events drive dragging on touch screens */
+      }
+      #puck {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: grab;
+        will-change: translate;
+      }
+      #puck:active { cursor: grabbing; }
+      #hud { font: 12px ui-monospace, Menlo, monospace; margin-top: 0.75rem; color: var(--muted); white-space: pre; }
+    </style>
+  </head>
+  <body>
+    <h1>Flick the puck</h1>
+    <p>Drag the puck and let go. It should glide, slow down and bounce off the walls.</p>
+    <div id="table"><div id="puck"></div></div>
+    <div id="hud"></div>
+    <script type="module" src="main.ts"></script>
+  </body>
+</html>

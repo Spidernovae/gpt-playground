@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Sortable Backlog</title>
+    <style>
+      :root { --bg: #f5f6f8; --surface: #fff; --text: #15171c; --muted: #5b6270; --accent: #3b5bfd; --accent-soft: #e6ebff; --border: #d8dce4; }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0e1015; --surface: #171a21; --text: #e7e9ef; --muted: #9aa1ad; --accent: #7d95ff; --accent-soft: #1f2640; --border: #2b303b; }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 1.5rem 1rem; background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; }
+      .layout { display: grid; grid-template-columns: minmax(0, 28rem) minmax(0, 1fr); gap: 1.5rem; max-width: 60rem; }
+      @media (max-width: 700px) { .layout { grid-template-columns: 1fr; } }
+      h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+      p { margin: 0 0 1rem; color: var(--muted); }
+
+      #list {
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem;
+        height: min(70vh, 600px);
+        overflow-y: auto;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+      }
+      .task {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.6rem 0.75rem;
+        margin-bottom: 0.4rem;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        user-select: none;
+      }
+      .handle {
+        cursor: grab;
+        touch-action: none; /* pointer events, not scrolling, when dragging by the handle */
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1;
+        padding: 0.2rem 0.3rem;
+        border: 0;
+        background: none;
+        border-radius: 6px;
+      }
+      .handle:focus-visible { outline: 2px solid var(--accent); }
+      .task .id { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); }
+      .task .title { flex: 1; }
+      .tag { font-size: 0.72rem; padding: 0.05rem 0.45rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+
+      /* Hooks for your implementation; use them or not. */
+      .task.dragging { opacity: 0.35; }
+      .ghost {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 10;
+        box-shadow: 0 12px 30px rgb(0 0 0 / 0.25);
+        rotate: 1.5deg;
+        will-change: translate;
+      }
+      .placeholder { height: 0.25rem; margin: 0 0 0.4rem; border-radius: 999px; background: var(--accent); }
+
+      #hud { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); white-space: pre; margin: 0; }
+      #order { font: 12px ui-monospace, Menlo, monospace; color: var(--muted); max-height: 12rem; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <section>
+        <h1>Sprint backlog</h1>
+        <p>Drag a task by its ⠿ handle to reorder it. Hold it near the top or bottom edge to scroll.</p>
+        <ul id="list" aria-label="Backlog tasks"></ul>
+      </section>
+      <aside>
+        <h2 style="font-size: 1rem; margin: 0 0 0.5rem">Self-check</h2>
+        <pre id="hud"></pre>
+        <h2 style="font-size: 1rem; margin: 1rem 0 0.5rem">Saved order</h2>
+        <div id="order"></div>
+      </aside>
+    </div>
+    <script type="module" src="/src/sortable/main.ts"></script>
+  </body>
+</html>

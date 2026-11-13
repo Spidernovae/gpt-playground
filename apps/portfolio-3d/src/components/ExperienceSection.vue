@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 interface ExperienceItem {
   company: string
   role: string
@@ -6,11 +7,13 @@ interface ExperienceItem {
   location: string
   achievements: string[]
 }
-defineProps<{ experience: ExperienceItem[] }>()
+const props = defineProps<{ id?: string; experience: ExperienceItem[] }>()
+const open = ref<Record<number, boolean>>({})
+function toggle(idx: number) { open.value[idx] = !open.value[idx] }
 </script>
 
 <template>
-  <section>
+  <section :id="id">
     <h2 class="nb-section-title">Experience</h2>
     <div class="nb-stack">
       <div v-for="(job, idx) in experience" :key="idx" class="nb-card">
@@ -20,7 +23,10 @@ defineProps<{ experience: ExperienceItem[] }>()
           </div>
           <div class="nb-muted">{{ job.period }} • {{ job.location }}</div>
         </div>
-        <ul class="nb-list">
+        <div class="nb-row" style="margin-top:8px;">
+          <button class="nb-button" @click="toggle(idx)">{{ open[idx] ? 'Hide' : 'Show' }} achievements</button>
+        </div>
+        <ul v-if="open[idx]" class="nb-list">
           <li v-for="(a, i) in job.achievements" :key="i">{{ a }}</li>
         </ul>
       </div>

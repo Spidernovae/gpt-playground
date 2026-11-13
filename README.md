@@ -29,3 +29,5 @@ You can still run the underlying Yarn commands directly if you prefer.
 - **data-structures-lib** – reusable data structures like `PriorityQueue` and
   `Graph` with built‑in DFS/BFS helpers.
 - **motion-playground** – sample animations using the `motion-v` library.
+- **passkey-auth** – passkey sign-in (autofill, conditional create, Signal API) with an Express + SimpleWebAuthn backend. Run with `make passkey-auth`.
+- **raf-lab** – six interactive experiments that explain `requestAnimationFrame` (vs timers, delta time, batching, hidden tabs, canvas particles). Run with `make raf-lab`.
